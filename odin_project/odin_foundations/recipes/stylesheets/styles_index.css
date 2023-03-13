@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  font-family: "PT Sans Narrow", sans-serif;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+}
+.header-container {
+  background-color: rgb(193, 193, 103, 0.8);
+  text-align: center;
+  padding: 10px 10px;
+  margin-bottom: 10px;
+}
+
+.header-container h1 {
+  font-size: 60px;
+}
+
+.about {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.dl-container {
+  margin-bottom: 20px;
+}
+dt a {
+  text-decoration: none;
+  color: rgb(98, 98, 199, 0.7);
+  font-weight: 500;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+dt a:hover,
+dt a:focus {
+  color: rgb(100, 71, 127);
+}
+
+dd {
+  margin: 0 230px 0 40px;
+  font-size: 18px;
+}
+
+footer {
+  margin-left: 20px;
+  font-size: 16px;
+}

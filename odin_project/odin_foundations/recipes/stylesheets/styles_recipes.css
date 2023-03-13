@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  font-family: "PT Sans Narrow", sans-serif;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+}
+
+.recipe-header-container {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 15px;
+}
+
+.stbc-container {
+  background-color: rgb(42, 132, 102);
+}
+
+.bb-container {
+  background-color: rgb(216, 170, 86);
+}
+
+.oyak-container {
+  background-color: rgb(114, 10, 10);
+}
+
+.dish-header {
+  font-size: 48px;
+  text-shadow: 2px 2px black;
+  color: rgb(255, 255, 255);
+}
+
+.primary-dish-image {
+  border: solid 3px black;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  display: block;
+}
+
+.stbc-header-shadow {
+  text-shadow: 2px 2px rgba(42, 132, 102, 0.4);
+}
+
+.bb-header-shadow {
+  text-shadow: 2px 2px rgba(216, 170, 86, 0.7);
+}
+
+.oyak-header-shadow {
+  text-shadow: 2px 2px rgba(114, 10, 10, 0.6);
+}
+
+h2 {
+  margin: 0 0 8px 15px;
+  font-size: 36px;
+}
+
+#dish-desc {
+  margin: 0 200px 5px 15px;
+  line-height: 95%;
+  font-size: 18px;
+}
+
+.lists-container {
+  margin-bottom: 20px;
+}
+
+h3 {
+  margin: 0 0 5px 40px;
+  font-size: 28px;
+  text-decoration: underline;
+}
+
+ul {
+  margin-bottom: 10px;
+}
+ul li {
+  list-style-position: inside;
+  line-height: 95%;
+  font-size: 16px;
+}
+
+ol {
+  margin-left: 11px;
+}
+
+.ol-item {
+  padding-left: 10px;
+  line-height: 95%;
+  font-size: 16px;
+}
+
+footer {
+  margin: 0 0 20px 20px;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+}
+
+#homepage-link {
+  text-decoration: none;
+  color: rgb(98, 98, 199, 0.7);
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.homepage-link:hover,
+.homepage-link:focus {
+  color: rgb(100, 71, 127);
+}
