@@ -8,6 +8,10 @@ function playRound(playerSelection, computerSelection) {
   let ps = playerSelection.toLowerCase();
   let cs = computerSelection.toLowerCase();
 
+  if (playerSelection === null) {
+    return;
+  }
+
   console.log(
     `Player: ${ps.charAt(0).toUpperCase() + ps.slice(1)} \nComputer: ${
       cs.charAt(0).toUpperCase() + cs.slice(1)
