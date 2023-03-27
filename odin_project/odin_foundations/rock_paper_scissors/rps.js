@@ -3,11 +3,26 @@ function getComputerChoice() {
   return rpsChoices[Math.floor(Math.random() * rpsChoices.length)];
 }
 
+function displayMessage(message) {
+  const resultsContainer = document.querySelector(".results-container");
+  const results = document.querySelector(".results");
+  results.textContent = message;
+  resultsContainer.replaceChild(results, results);
+}
+
+function scoreMessaging(message) {
+  const scoreContainer = document.querySelector(".score-container");
+  const score = document.querySelector(".score");
+  score.textContent = message;
+  scoreContainer.replaceChild(score, score);
+}
+
 function playRound(e) {
+  playerScore = 0;
+  compScore = 0;
   let ps = e.target.dataset.rps;
-  if (ps === null || ps === undefined) {
-    return;
-  }
+  if (ps === null || ps === undefined) return;
+
   const cs = getComputerChoice().toLowerCase();
 
   if (ps === "paper" && cs === "scissors") {
@@ -27,13 +42,4 @@ function playRound(e) {
   }
 }
 
-function displayMessage(message) {
-  const resultsContainer = document.querySelector(".results-container");
-  const results = document.createElement("div");
-  resultsContainer.classList.add("results");
-  resultsContainer.textContent = message;
-  resultsContainer.replaceChild(resultsContainer, results);
-}
-
 document.addEventListener("click", playRound);
-// document.addEventListener("click", (e) => console.log(e.target.dataset.rps));
