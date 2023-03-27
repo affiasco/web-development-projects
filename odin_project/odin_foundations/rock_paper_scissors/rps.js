@@ -5,22 +5,21 @@ function getComputerChoice() {
 
 function playRound(e) {
   let ps = e.target.dataset.rps;
-  console.log(ps);
-  let cs = getComputerChoice().toLowerCase();
-  if (ps === null) {
+  if (ps === null || ps === undefined) {
     return;
   }
+  const cs = getComputerChoice().toLowerCase();
 
   if (ps === "paper" && cs === "scissors") {
-    console.log("You Lose! Scissors beat Paper");
+    displayMessage("You Lose! Scissors beat Paper");
   } else if (ps === "scissors" && cs === "rock") {
-    console.log("You Lose! Rock beats Scissors");
+    displayMessage("You Lose! Rock beats Scissors");
   } else if (ps === "rock" && cs === "paper") {
-    console.log("You Lose! Paper beats Rock");
+    displayMessage("You Lose! Paper beats Rock");
   } else if (ps === cs) {
-    console.log("Tie! Try again...");
+    displayMessage("Tie! Try again...");
   } else {
-    console.log(
+    displayMessage(
       `You win! ${ps.charAt(0).toUpperCase() + ps.slice(1)} beats ${
         cs.charAt(0).toUpperCase() + cs.slice(1)
       }`
@@ -28,4 +27,13 @@ function playRound(e) {
   }
 }
 
+function displayMessage(message) {
+  const resultsContainer = document.querySelector(".results-container");
+  const results = document.createElement("div");
+  resultsContainer.classList.add("results");
+  resultsContainer.textContent = message;
+  resultsContainer.replaceChild(resultsContainer, results);
+}
+
 document.addEventListener("click", playRound);
+// document.addEventListener("click", (e) => console.log(e.target.dataset.rps));
