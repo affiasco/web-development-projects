@@ -62,12 +62,20 @@ function playRound(e) {
 function endGame() {
   const winnerContainer = document.querySelector(".winner-container");
   const winner = document.querySelector(".winner");
+  const playAgain = document.querySelector(".play-again");
+
   if (playerScore === 5 && compScore < 5) {
     winner.textContent = "Amazing...you've done it! YOU WIN!";
+    playAgain.classList.remove("invisible");
   } else if (compScore === 5 && playerScore < 5) {
     winner.textContent = "Better Luck next time. Computer wins...";
+    playAgain.classList.remove("invisible");
   }
   winnerContainer.replaceChild(winner, winner);
 }
 
 document.addEventListener("click", playRound);
+
+playAgain.addEventListener("click", () => {
+  window.location.reload();
+});
