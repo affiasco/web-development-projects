@@ -23,14 +23,8 @@ function scoreMessaging(message) {
 function updateScore(roundWinner = null) {
   if (roundWinner === "player") {
     ++playerScore;
-    // scoreMessaging(
-    //   `Player Score: ${playerScore}, Computer Score: ${compScore}`
-    // );
   } else if (roundWinner === "computer") {
     ++compScore;
-    // scoreMessaging(
-    //   `Player Score: ${playerScore}, Computer Score: ${compScore}`
-    // );
   }
 
   scoreMessaging(`Player Score: ${playerScore}, Computer Score: ${compScore}`);
@@ -69,6 +63,7 @@ function endGame() {
   let userChoice;
   if (playerScore === 5 && compScore < 5) {
     alert("Amazing...you've done it! YOU WIN!");
+    cornify_add();
     location.reload();
   } else if (compScore === 5 && playerScore < 5) {
     alert("Better Luck next time. Computer wins...");
