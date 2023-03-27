@@ -60,15 +60,14 @@ function playRound(e) {
 }
 
 function endGame() {
-  let userChoice;
+  const winnerContainer = document.querySelector(".winner-container");
+  const winner = document.querySelector(".winner");
   if (playerScore === 5 && compScore < 5) {
-    alert("Amazing...you've done it! YOU WIN!");
-    cornify_add();
-    location.reload();
+    winner.textContent = "Amazing...you've done it! YOU WIN!";
   } else if (compScore === 5 && playerScore < 5) {
-    alert("Better Luck next time. Computer wins...");
-    location.reload();
+    winner.textContent = "Better Luck next time. Computer wins...";
   }
+  winnerContainer.replaceChild(winner, winner);
 }
 
 document.addEventListener("click", playRound);
