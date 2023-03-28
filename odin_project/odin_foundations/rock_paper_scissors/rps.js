@@ -1,3 +1,6 @@
+const btnContainer = document.querySelector(".button-container");
+const playAgain = document.querySelector(".play-again");
+const choices = document.querySelectorAll(".choice");
 let playerScore = 0;
 let compScore = 0;
 
@@ -59,17 +62,23 @@ function playRound(e) {
   endGame();
 }
 
+function cleanUp() {
+  choices.forEach((choice) => choice.classList.add("invisible"));
+  playAgain.classList.remove("invisible");
+  btnContainer.classList.add("no-display");
+}
+
 function endGame() {
   const winnerContainer = document.querySelector(".winner-container");
   const winner = document.querySelector(".winner");
-  const playAgain = document.querySelector(".play-again");
 
   if (playerScore === 5 && compScore < 5) {
     winner.textContent = "Amazing...you've done it! YOU WIN!";
+    cleanUp();
     playAgain.classList.remove("invisible");
   } else if (compScore === 5 && playerScore < 5) {
     winner.textContent = "Better Luck next time. Computer wins...";
-    playAgain.classList.remove("invisible");
+    cleanUp();
   }
   winnerContainer.replaceChild(winner, winner);
 }
