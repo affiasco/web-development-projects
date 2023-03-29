@@ -1,7 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url(https://i.pinimg.com/originals/90/27/a7/9027a714ab98d1412752e236b7bee789.jpg)
+    no-repeat;
+  background-size: cover;
+}
+
+.welcome {
+  text-align: center;
+}
+
 .invisible {
   visibility: hidden;
 }
 
 .no-display {
   display: none;
+}
+
+.btn-image {
+  height: 200px;
+  width: 200px;
+  background-color: none;
+  border: white 3px solid;
+}
+
+.rock-button {
+  /* Fist icons created by Freepik - Flaticon https://www.flaticon.com/free-icons/fist */
+  background: url("/images/fist.png") center;
+  background-size: cover;
+}
+
+.paper-button {
+  /* Hand icons created by max.icons - Flaticon https://www.flaticon.com/free-icons/hand */
+  background: url("/images/paper.png") center;
+  background-size: cover;
+}
+
+.scissor-button {
+  /* Hands and gestures icons created by Darius Dan - Flaticon https://www.flaticon.com/free-icons/hands-and-gestures */
+  background: url("/images/rock-and-roll.png") center;
+  background-size: cover;
+}
+
+.play-again {
+  background: url("/images/reset.png") center;
+  background-size: cover;
 }

@@ -1,5 +1,5 @@
 const btnContainer = document.querySelector(".button-container");
-const playAgain = document.querySelector(".play-again");
+const playAgain = document.querySelector(".play-again-container");
 const choices = document.querySelectorAll(".choice");
 let playerScore = 0;
 let compScore = 0;
@@ -35,6 +35,7 @@ function updateScore(roundWinner = null) {
 
 function playRound(e) {
   let ps = e.target.dataset.rps;
+
   if (ps === null || ps === undefined) return;
 
   const cs = getComputerChoice().toLowerCase();
@@ -64,7 +65,7 @@ function playRound(e) {
 
 function cleanUp() {
   choices.forEach((choice) => choice.classList.add("invisible"));
-  playAgain.classList.remove("invisible");
+  playAgain.classList.remove("no-display");
   btnContainer.classList.add("no-display");
 }
 
@@ -75,7 +76,6 @@ function endGame() {
   if (playerScore === 5 && compScore < 5) {
     winner.textContent = "Amazing...you've done it! YOU WIN!";
     cleanUp();
-    playAgain.classList.remove("invisible");
   } else if (compScore === 5 && playerScore < 5) {
     winner.textContent = "Better Luck next time. Computer wins...";
     cleanUp();

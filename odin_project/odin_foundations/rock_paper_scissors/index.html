@@ -4,15 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Rock, Paper, METAL</title>
     <script src="rps.js" defer></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="button-container">
-      <button class="choice" data-rps="rock">Rock</button>
-      <button class="choice" data-rps="paper">Paper</button>
-      <button class="choice" data-rps="scissors">Scissors</button>
+    <!-- need to give view as if its been clicked -->
+    <div class="opening-container">
+      <h1 class="welcome">Welcome...</h1>
+      <p class="to-rps">to Rock. Paper. METAL!</p>
     </div>
     <div class="results-container">
       <div class="results"></div>
@@ -20,9 +20,41 @@
     <div class="score-container">
       <div class="score"></div>
     </div>
+
+    <div class="play-again-container no-display">
+      <input type="button" class="btn-image play-again" />
+      <!-- Gif from: https://giphy.com/gifs/black-metal-headbanging-9R3e9HW2HPvb2 -->
+      <img
+        src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDk2OTdmZWIwYzNjZTdlZTcyZWI5ZGE3MDE4YWE0MDE3NjM0YTMyMyZjdD1n/9R3e9HW2HPvb2/giphy.gif"
+        alt=""
+      />
+    </div>
     <div class="winner-container">
       <div class="winner"></div>
-      <button type="submit" class="play-again invisible">Play Again!</button>
+      <div class="invisible">play Again!</div>
+      <div class="button-container">
+        <div>
+          <input
+            type="button"
+            class="choice btn-image rock-button"
+            data-rps="rock"
+          />
+        </div>
+        <div>
+          <input
+            type="button"
+            class="choice btn-image paper-button"
+            data-rps="paper"
+          />
+        </div>
+        <div>
+          <input
+            type="button"
+            class="choice btn-image scissor-button"
+            data-rps="scissor"
+          />
+        </div>
+      </div>
     </div>
   </body>
 </html>
