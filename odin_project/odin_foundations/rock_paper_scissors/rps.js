@@ -1,49 +1,97 @@
+const resultsContainer = document.querySelector(".results-container");
+const results = document.querySelector(".results");
+const btnContainer = document.querySelector(".button-container");
+const playAgain = document.querySelector(".play-again");
+const winnerDiv = document.querySelector(".winner");
+const bmGif = document.querySelector(".bm-gif");
+const choices = document.querySelectorAll(".choice");
+const scoreContainer = document.querySelector(".score-container");
+const score = document.querySelector(".score");
+let playerScore = 0;
+let compScore = 0;
+
+scoreContainer.appendChild(score);
+
 function getComputerChoice() {
-  const rpsChoices = ["Rock", "Paper", "Scissors"];
+  const rpsChoices = ["Rock", "Paper", "Metal"];
   return rpsChoices[Math.floor(Math.random() * rpsChoices.length)];
 }
 
-function playRound(playerSelection, computerSelection) {
-  const rpsChoices = ["rock", "paper", "scissors"];
-  let ps = playerSelection.toLowerCase();
-  let cs = computerSelection.toLowerCase();
+function displayMessage(message) {
+  results.textContent = message;
+  resultsContainer.replaceChild(results, results);
+}
 
-  if (playerSelection === null) {
-    return;
+function scoreMessaging(message) {
+  score.textContent = message;
+  scoreContainer.replaceChild(score, score);
+}
+
+function updateScore(roundWinner = null) {
+  if (roundWinner === "player") {
+    ++playerScore;
+  } else if (roundWinner === "computer") {
+    ++compScore;
   }
 
-  console.log(
-    `Player: ${ps.charAt(0).toUpperCase() + ps.slice(1)} \nComputer: ${
-      cs.charAt(0).toUpperCase() + cs.slice(1)
-    }`
-  );
+  scoreMessaging(`METALHEAD: ${playerScore} CORPORATE: ${compScore}`);
+}
 
-  if (rpsChoices.includes(ps.toLowerCase())) {
-    if (ps === "paper" && cs === "scissors") {
-      return "You Lose! Scissors beat Paper";
-    } else if (ps === "scissors" && cs === "rock") {
-      return "You Lose! Rock beats Scissors";
-    } else if (ps === "rock" && cs === "paper") {
-      return "You Lose! Paper beats Rock";
-    } else if (ps === cs) {
-      return "Tie! Try again...";
-    } else {
-      return `You win! ${ps.charAt(0).toUpperCase() + ps.slice(1)} beats ${
-        cs.charAt(0).toUpperCase() + cs.slice(1)
-      }`;
-    }
+function playRound(e) {
+  winnerDiv.classList.remove("invisible");
+  results.classList.remove("invisible");
+  let ps = e.target.dataset.rps;
+
+  if (ps === null || ps === undefined) return;
+
+  const cs = getComputerChoice().toLowerCase();
+
+  if (ps === "paper" && cs === "metal") {
+    displayMessage("You LOSE! Metal BEATS Paper");
+    updateScore("computer");
+  } else if (ps === "metal" && cs === "rock") {
+    displayMessage("You LOSE! Rock BEATS Metal");
+    updateScore("computer");
+  } else if (ps === "rock" && cs === "paper") {
+    displayMessage("You LOSE! Paper BEATS Rock");
+    updateScore("computer");
+  } else if (ps === cs) {
+    displayMessage("Tie! Try again...");
+    updateScore();
   } else {
-    return `You did not select a viable option.\nPlease choose: Rock, Paper or Scissors`;
-  }
-}
-
-function game() {
-  for (let round = 0; round < 5; round++) {
-    let userChoice = prompt(
-      `Round ${round} out of 5. Choose: Rock, Paper, or Scissors`
+    displayMessage(
+      `You WIN! ${ps.charAt(0).toUpperCase() + ps.slice(1)} BEATS ${
+        cs.charAt(0).toUpperCase() + cs.slice(1)
+      }`
     );
-    console.log(playRound(userChoice, getComputerChoice()));
+    updateScore("player");
   }
+  endGame();
 }
 
-game();
+function cleanUp() {
+  choices.forEach((choice) => choice.classList.add("invisible"));
+  playAgain.classList.remove("no-display");
+  btnContainer.classList.add("no-display");
+}
+
+function endGame() {
+  const winnerContainer = document.querySelector(".winner-container");
+  const winner = document.querySelector(".winner");
+
+  if (playerScore === 5 && compScore < 5) {
+    winner.textContent = "Amazing...you've done it! YOU WIN!";
+    bmGif.classList.remove("no-display");
+    cleanUp();
+  } else if (compScore === 5 && playerScore < 5) {
+    winner.textContent = "Better Luck next time. Computer wins...";
+    cleanUp();
+  }
+  winnerContainer.replaceChild(winner, winner);
+}
+
+document.addEventListener("click", playRound);
+
+playAgain.addEventListener("click", () => {
+  window.location.reload();
+});

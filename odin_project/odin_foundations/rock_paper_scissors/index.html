@@ -4,8 +4,65 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="rps.js"></script>
+    <title>Rock, Paper, METAL</title>
+    <script src="rps.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body></body>
+  <body>
+    <div class="page-container">
+      <div class="opening-container">
+        <h1 class="welcome">Welcome...</h1>
+        <p class="to-rps fade-in">to Rock. Paper. METAL!</p>
+      </div>
+      <div class="score-results">
+        <div class="score-container">
+          <div class="score">METALHEAD: 0 CORPORATE: 0</div>
+        </div>
+        <div class="winner no-display"></div>
+      </div>
+
+      <div class="play-again-container center">
+        <img
+          src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDk2OTdmZWIwYzNjZTdlZTcyZWI5ZGE3MDE4YWE0MDE3NjM0YTMyMyZjdD1n/9R3e9HW2HPvb2/giphy.gif"
+          alt=""
+          class="bm-gif no-display"
+        />
+        <input type="button" class="btn-image play-again no-display" />
+        <!-- Gif from: https://giphy.com/gifs/black-metal-headbanging-9R3e9HW2HPvb2 -->
+      </div>
+
+      <div class="winner-container">
+        <div class="button-container">
+          <div class="btn-inner">
+            <input
+              type="button"
+              class="choice btn-image rock-button"
+              data-rps="rock"
+            />
+          </div>
+          <div class="btn-inner">
+            <input
+              type="button"
+              class="choice btn-image paper-button"
+              data-rps="paper"
+            />
+          </div>
+          <div class="btn-inner">
+            <input
+              type="button"
+              class="choice btn-image metal-button"
+              data-rps="metal"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="results-container">
+        <div class="results invsible"></div>
+      </div>
+    </div>
+  </body>
 </html>

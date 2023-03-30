@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url(https://images.pexels.com/photos/1118869/pexels-photo-1118869.jpeg)
+    no-repeat;
+  background-size: cover;
+  color: white;
+  width: 100%;
+  height: 100%;
+  font-family: "Reenie Beanie", cursive;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.opening-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* flex: 1; */
+}
+
+.opening-container .welcome {
+  flex: 3;
+  padding: 0;
+  font-size: 120px;
+  text-shadow: black 1px 0 10px;
+}
+
+.opening-container .to-rps {
+  flex: 1;
+  font-size: 80px;
+  text-shadow: black 1px 0 10px;
+}
+
+.score-container {
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+}
+
+.score,
+.results {
+  border-radius: 50%;
+  padding: 10px 20px;
+  text-shadow: rgb(0, 0, 0) 10px 10px 10px;
+  color: rgb(255, 255, 255);
+  font-size: 100px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.no-display {
+  display: none;
+}
+
+.btn-image {
+  height: 350px;
+  width: 350px;
+  text-decoration: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  transition: 0.2s all;
+}
+
+.btn-image:active {
+  transform: scale(0.98);
+}
+
+.rock-button {
+  /* Fist icons created by Freepik - Flaticon https://www.flaticon.com/free-icons/fist */
+  background: url("/images/fist.png") center;
+  background-size: cover;
+}
+
+.paper-button {
+  /* Hand icons created by max.icons - Flaticon https://www.flaticon.com/free-icons/hand */
+  background: url("/images/paper.png") center;
+  background-size: cover;
+}
+
+.metal-button {
+  /* Hands and gestures icons created by Darius Dan - Flaticon https://www.flaticon.com/free-icons/hands-and-gestures */
+  background: url("/images/rock-and-roll.png") center;
+  background-size: cover;
+}
+
+img {
+  width: 450px;
+  height: 450px;
+}
+
+.winner {
+  text-align: center;
+}
+
+.results-container {
+  display: flex;
+  justify-content: center;
+}
+.results {
+  font-size: 85px;
+}
+
+.play-again-container {
+  display: flex;
+  justify-content: center;
+}
+
+.play-again {
+  /* Reset icons created by Andrean Prabowo "https://www.flaticon.com/free-icons/reset */
+  background: url("/images/undo.png") center;
+  background-size: cover;
+  margin-left: 30px;
+  margin-top: 50px;
+}
+
+.bm-gif {
+  border-radius: 20px;
+}
+
+.score-results {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Keyframes */
+
+.fade-in {
+  animation: fadeIn 8s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
