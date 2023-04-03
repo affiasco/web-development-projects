@@ -1,7 +1,18 @@
-body {
-  background: lightblue;
+* {
+  margin: 0;
+  padding: 0;
 }
-#canvas {
-  background: #fff;
-  margin: 20px;
+
+.grid {
+  display: flex;
+}
+
+.column {
+  flex: 1;
+}
+
+.row {
+  margin: 2px;
+  background: gold;
+  text-align: center;
 }

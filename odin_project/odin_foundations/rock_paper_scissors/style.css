@@ -123,7 +123,7 @@ img {
 
 .play-again {
   /* Reset icons created by Andrean Prabowo "https://www.flaticon.com/free-icons/reset */
-  background: url("/images/undo.png") center;
+  background: url("./images/undo.png") center;
   background-size: cover;
   margin-left: 30px;
   margin-top: 50px;

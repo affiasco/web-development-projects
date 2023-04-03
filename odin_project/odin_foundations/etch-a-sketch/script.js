@@ -1,21 +1,37 @@
-const boxWidth = 400;
-const boxHeight = 400;
-const padding = 10;
+// let rows, columns;
+// gridContainer = document.querySelector(".grid-container");
+// newGrid = document.createElement("div");
 
-var canvas = document.getElementById("canvas");
-var ctx = canvas.getContext("2d");
-function drawBoard() {
-  for (var x = 0; x <= boxWidth; x += 25) {
-    ctx.moveTo(0.5 + x + padding, padding);
-    ctx.lineTo(0.5 + x + padding, boxHeight + padding);
-  }
+// function createGrid(x) {
+//   for (rows = 0; rows < x; rows++) {
+//     for (columns = 0; columns < x; columns++) {
+//       gridContainer.appendChild(newGrid);
+//     }
+//   }
+//   newGrid.style.width = parseInt(960 / x);
+//   newGrid.style.height = parseInt(960 / x);
+// }
 
-  for (var x = 0; x <= boxHeight; x += 25) {
-    ctx.moveTo(padding, 0.5 + x + padding);
-    ctx.lineTo(boxWidth + padding, 0.5 + x + padding);
+// createGrid(10);
+
+let columns, rows;
+const grid = document.createElement("div");
+grid.className = "grid";
+
+// Creates Grid defaults to 16
+function createGrid(columns = 4, rows = 4) {
+  for (let c = 0; c < columns; c++) {
+    const column = document.createElement("div");
+    column.className = "column";
+    for (let r = 0; r < rows; r++) {
+      const row = document.createElement("div");
+      row.className = "row";
+      row.textContent = c + "_" + r;
+      column.appendChild(row);
+    }
+    grid.appendChild(column);
   }
-  ctx.strokeStyle = "black";
-  ctx.stroke();
+  document.body.appendChild(grid);
 }
 
-drawBoard();
+createGrid();
