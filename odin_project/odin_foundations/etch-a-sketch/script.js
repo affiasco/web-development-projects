@@ -1,8 +1,8 @@
+// variables
 let columns, rows;
 let column, row;
-// const grid = document.createElement("div");
-// grid.className = "grid";
 const newGridBtn = document.querySelector(".new-grid-btn");
+const randomizeColorBtn = document.querySelector(".random-color-btn");
 const gridContainer = document.querySelector(".grid-container");
 
 // Creates Grid defaults to 16
@@ -24,29 +24,60 @@ function createGrid(columns, rows) {
   mouseOverActions();
 }
 
-function mouseOverActions() {
+// Adds the over action on the grid
+// sets default to red mouseover, white mouseout
+function mouseOverActions(mouseoverColor = "red", mouseoutColor = "white") {
   const gridRows = document.querySelectorAll(".row");
   gridRows.forEach((gridRow) => {
-    gridRow.addEventListener("mouseover", () => {
-      gridRow.style.background = "red";
+    gridRow.addEventListener("mousemove", () => {
+      gridRow.style.background = mouseoverColor;
     });
     gridRow.addEventListener("mouseout", () => {
-      gridRow.style.background = "white";
+      gridRow.style.background = mouseoutColor;
     });
   });
 }
 
+// Clears the grid out
 function clearGrid() {
   const currentGrid = gridContainer.querySelector(".grid");
   gridContainer.removeChild(currentGrid);
 }
 
+// Creates a new grid from the new grid button
+// checks if the response has a letter in it
 function newGrid() {
-  let response = prompt("What size grid would you like? (columns, rows)");
-  response = response.split(",");
-  clearGrid();
-  createGrid(parseInt(response[0]), parseInt(response[1]));
+  const alphabet = [..."abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRESTUVWXYZ"];
+  let responseRows = prompt("How many rows would you like?");
+  let responseColumns = prompt("How many columns would you like?");
+
+  if (alphabet.includes(responseRows) || alphabet.includes(responseColumns)) {
+    alert("Please choose a number!");
+    newGrid();
+  } else {
+    clearGrid();
+    createGrid(parseInt(responseColumns), parseInt(responseRows));
+  }
 }
 
+// Returns random hexadecimal color
+function getRandomHex() {
+  let randomHex =
+    "#" +
+    Math.floor(Math.random() * 16777215)
+      .toString(16)
+      .padStart(6, "0");
+  return randomHex;
+}
+
+// function for the randomize color event, passes the random hexademicals to mouse over actions
+function randomColor() {
+  mouseOverActions(getRandomHex(), getRandomHex());
+}
+
+// event listeners
 newGridBtn.addEventListener("click", newGrid);
+randomizeColorBtn.addEventListener("click", randomColor);
+
+// creates grid on page load
 createGrid(8, 8);
