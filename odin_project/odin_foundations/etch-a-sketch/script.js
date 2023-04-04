@@ -1,37 +1,36 @@
-// let rows, columns;
-// gridContainer = document.querySelector(".grid-container");
-// newGrid = document.createElement("div");
-
-// function createGrid(x) {
-//   for (rows = 0; rows < x; rows++) {
-//     for (columns = 0; columns < x; columns++) {
-//       gridContainer.appendChild(newGrid);
-//     }
-//   }
-//   newGrid.style.width = parseInt(960 / x);
-//   newGrid.style.height = parseInt(960 / x);
-// }
-
-// createGrid(10);
-
 let columns, rows;
 const grid = document.createElement("div");
+let column;
+let row;
 grid.className = "grid";
 
 // Creates Grid defaults to 16
 function createGrid(columns = 4, rows = 4) {
   for (let c = 0; c < columns; c++) {
-    const column = document.createElement("div");
-    column.className = "column";
+    column = document.createElement("div");
+    column.className = `column`;
     for (let r = 0; r < rows; r++) {
-      const row = document.createElement("div");
-      row.className = "row";
-      row.textContent = c + "_" + r;
+      row = document.createElement("div");
+      row.className = `row data-${r}`;
+      row.style.height = "100px";
       column.appendChild(row);
     }
     grid.appendChild(column);
   }
   document.body.appendChild(grid);
+  mouseOverActions();
+}
+
+function mouseOverActions() {
+  const gridRows = document.querySelectorAll(".row");
+  gridRows.forEach((gridRow) => {
+    gridRow.addEventListener("mouseover", () => {
+      gridRow.style.background = "red";
+    });
+    gridRow.addEventListener("mouseout", () => {
+      gridRow.style.background = "white";
+    });
+  });
 }
 
 createGrid();

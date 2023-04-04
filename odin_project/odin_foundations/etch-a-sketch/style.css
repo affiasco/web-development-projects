@@ -5,6 +5,11 @@
 
 .grid {
   display: flex;
+  /* justify-content: center;
+  align-items: center; */
+  border: 1px solid black;
+  margin: 100px;
+  max-width: 960px;
 }
 
 .column {
@@ -12,7 +17,6 @@
 }
 
 .row {
-  margin: 2px;
-  background: gold;
-  text-align: center;
+  /* background: gold; */
+  border: 1px solid black;
 }
