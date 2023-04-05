@@ -9,14 +9,21 @@
     <title>Etch-a-sketch</title>
   </head>
   <body>
-    <div class="actions-container">
-      <button type="button" class="random-color-btn">Randomize it!</button>
-      <div class="slider-container">
-        <p>Create a new grid: 4x - 16x</p>
-        <input type="range" min="4" max="16" value="16" class="slider" />
-        <div class="slider-value">Current Grid: 16 x 16</div>
+    <div class="container">
+      <div class="actions-container">
+        <div class="slider-container">
+          <p>Create a new grid: 4x - 16x</p>
+          <input type="range" min="4" max="16" value="16" class="slider" />
+          <div class="slider-value">Current Grid: 16 x 16</div>
+        </div>
+        <div class="etcha">
+          <h1>Etch-a-sketch</h1>
+          <p>Use the slider to the left to make a new grid</p>
+          <p>Use the slider to the right to randomize the colors</p>
+        </div>
+        <button type="button" class="random-color-btn">Randomize it!</button>
       </div>
+      <div class="grid-container"></div>
     </div>
-    <div class="grid-container"></div>
   </body>
 </html>

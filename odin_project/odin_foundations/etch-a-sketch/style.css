@@ -6,37 +6,69 @@
 body {
   height: 100vh;
   background: #eeeeee;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
-/* 
-.button-container {
-  display: flex;
-  justify-content: center;
-} */
 
-/* button {
-  background-color: #7b38d8;
-  padding: 20px;
-  width: 200px;
-  color: #ffffff;
+.container {
+  margin: 30px;
+}
+
+.actions-container {
+  margin-top: -30px;
+  display: flex;
+  justify-content: space-around;
+  max-width: 85vw;
+  background-color: #ee6c4d;
+}
+
+.etcha {
   text-align: center;
-  border: 4px double #cccccc;
+}
+
+.etcha h1 {
+  text-shadow: 0px 3px 0px #b2a98f, 0px 14px 10px rgba(0, 0, 0, 0.15),
+    0px 24px 2px rgba(0, 0, 0, 0.1), 0px 34px 30px rgba(0, 0, 0, 0.1);
+  font-size: 40px;
+}
+
+.etcha p {
+  text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
+  font-size: 18px;
+}
+
+button,
+.slider-container {
+  background-color: #3d5a80;
+  padding: 10px;
+  width: 200px;
+  color: #e0fbfc;
+  text-align: center;
+  border: 4px double #e0fbfc;
   border-radius: 10px;
   font-size: 16px;
+  margin: 5px;
+}
+
+.slider {
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+button {
   cursor: pointer;
   margin: 5px;
-} */
+}
 
 .grid-container {
   display: flex;
-  max-height: 90vh;
-  max-width: 90vw;
-  /* margin: 4000px; */
+  max-height: 85vh;
+  max-width: 85vw;
 }
+
 .grid {
   display: flex;
   flex: 1;
   border: 4mm ridge rgba(149, 49, 9, 0.6);
-  /* margin: auto; */
 }
 
 .column {

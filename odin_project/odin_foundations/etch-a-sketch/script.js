@@ -82,5 +82,5 @@ slider.addEventListener("click", getSliderValue);
 slider.addEventListener("mouseup", updateSliderValue);
 
 // creates grid on page load
-// default 8x8
-createGrid(8, 8);
+// default 16x16
+createGrid(16, 16);
