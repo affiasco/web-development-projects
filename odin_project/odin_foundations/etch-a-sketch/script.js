@@ -25,8 +25,11 @@ function createGrid(columns, rows) {
 }
 
 // Adds the over action on the grid
-// sets default to red mouseover, white mouseout
-function mouseOverActions(mouseoverColor = "red", mouseoutColor = "white") {
+// sets default to #fa8072 mouseover, #eeeeee mouseout
+function mouseOverActions(
+  mouseoverColor = "#fa8072",
+  mouseoutColor = "#eeeeee"
+) {
   const gridRows = document.querySelectorAll(".row");
   gridRows.forEach((gridRow) => {
     gridRow.addEventListener("mousemove", () => {
@@ -80,4 +83,5 @@ newGridBtn.addEventListener("click", newGrid);
 randomizeColorBtn.addEventListener("click", randomColor);
 
 // creates grid on page load
-createGrid(8, 8);
+// default 16x16
+createGrid(16, 16);

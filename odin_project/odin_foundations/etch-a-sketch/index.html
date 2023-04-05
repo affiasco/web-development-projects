@@ -9,9 +9,20 @@
     <title>Etch-a-sketch</title>
   </head>
   <body>
-    <button type="button" class="new-grid-btn">New Grid?</button>
-    <button type="button" class="random-color-btn">Randomize it!</button>
-
+    <div class="button-container">
+      <button type="button" class="new-grid-btn">New Grid?</button>
+      <button type="button" class="random-color-btn">Randomize it!</button>
+      <div class="slidecontainer">
+        <input
+          type="range"
+          min="1"
+          max="16"
+          value="4"
+          class="slider"
+          id="myRange"
+        />
+      </div>
+    </div>
     <div class="grid-container"></div>
   </body>
 </html>
