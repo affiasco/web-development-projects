@@ -1,9 +1,11 @@
 // variables
 let columns, rows;
 let column, row;
-const newGridBtn = document.querySelector(".new-grid-btn");
 const randomizeColorBtn = document.querySelector(".random-color-btn");
 const gridContainer = document.querySelector(".grid-container");
+const slider = document.querySelector(".slider");
+const sliderContainer = document.querySelector(".slider-container");
+const sliderValue = document.querySelector(".slider-value");
 
 // Creates Grid defaults to 16
 function createGrid(columns, rows) {
@@ -47,20 +49,16 @@ function clearGrid() {
   gridContainer.removeChild(currentGrid);
 }
 
-// Creates a new grid from the new grid button
-// checks if the response has a letter in it
-function newGrid() {
-  const alphabet = [..."abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRESTUVWXYZ"];
-  let responseRows = prompt("How many rows would you like?");
-  let responseColumns = prompt("How many columns would you like?");
+// Slider that will clear then create a new grid with associated value
+function getSliderValue() {
+  clearGrid();
+  createGrid(parseInt(slider.value), parseInt(slider.value));
+}
 
-  if (alphabet.includes(responseRows) || alphabet.includes(responseColumns)) {
-    alert("Please choose a number!");
-    newGrid();
-  } else {
-    clearGrid();
-    createGrid(parseInt(responseColumns), parseInt(responseRows));
-  }
+// updates the slider value to display on the page
+function updateSliderValue() {
+  sliderValue.textContent = `Current Grid: ${slider.value}x${slider.value}`;
+  sliderContainer.replaceChild(sliderValue);
 }
 
 // Returns random hexadecimal color
@@ -79,9 +77,10 @@ function randomColor() {
 }
 
 // event listeners
-newGridBtn.addEventListener("click", newGrid);
 randomizeColorBtn.addEventListener("click", randomColor);
+slider.addEventListener("click", getSliderValue);
+slider.addEventListener("mouseup", updateSliderValue);
 
 // creates grid on page load
-// default 16x16
-createGrid(16, 16);
+// default 8x8
+createGrid(8, 8);
