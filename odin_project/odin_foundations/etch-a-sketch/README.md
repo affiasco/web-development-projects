@@ -11,6 +11,7 @@ This work showcases my ability to:
 - Write more complex JavaScript Functions
 - Strong emphasis on doing more complex actions with eventlisteners and callback functions
 - Select, create, and manipulate items within a DOM
-- Create and replace nodes within the DOM
+- Utilize loops for inserting items into a DOM
+- Also includes extra js file to create grid utilizing Canvas instead of creating divs
 - Practice CSS Flexbox and HTML page structure
 - Further fluency with command line

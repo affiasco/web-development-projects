@@ -1,3 +1,4 @@
+// Example how to make grid with canvas
 const boxWidth = 400;
 const boxHeight = 400;
 const padding = 10;
